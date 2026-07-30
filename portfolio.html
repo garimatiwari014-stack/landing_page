@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | WebTecMart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-overlay {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dark": "#222222",
+                      "primary": "#06619c",
+                      "surface-dim": "#dadada",
+                      "primary-container": "#337ab7",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f3f3f3",
+                      "surface-container-highest": "#e2e2e2",
+                      "tertiary-container": "#298732",
+                      "success-green": "#5CB85C",
+                      "primary-fixed": "#d0e4ff",
+                      "on-tertiary-container": "#fffeff",
+                      "secondary": "#5f5e5e",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#9bcbff",
+                      "on-tertiary-fixed-variant": "#005312",
+                      "tertiary-fixed": "#99f894",
+                      "inverse-primary": "#9bcbff",
+                      "surface-container-high": "#e8e8e8",
+                      "secondary-container": "#e2dfde",
+                      "tertiary-fixed-dim": "#7edb7b",
+                      "surface-container": "#eeeeee",
+                      "outline-variant": "#c1c7d1",
+                      "surface-tint": "#0a629e",
+                      "tertiary": "#006d1b",
+                      "surface-variant": "#e2e2e2",
+                      "surface": "#f9f9f9",
+                      "on-secondary-fixed-variant": "#474746",
+                      "on-primary-container": "#ffffff",
+                      "background": "#f9f9f9",
+                      "background-alt": "#F5F5F5",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "link-blue": "#337AB7",
+                      "on-tertiary-fixed": "#002204",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-surface": "#1a1c1c",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-secondary-container": "#636262",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#f9f9f9",
+                      "on-background": "#1a1c1c",
+                      "on-primary": "#ffffff",
+                      "outline": "#717881",
+                      "inverse-surface": "#2f3131",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#001d34",
+                      "on-surface-variant": "#414750",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-primary-fixed-variant": "#004a79"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "gutter": "16px",
+                      "unit": "4px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Hanken Grotesk"],
+                      "label-md": ["JetBrains Mono"],
+                      "headline-md": ["Hanken Grotesk"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "body-sm": ["Inter"],
+                      "headline-lg": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant shadow-sm h-16 transition-colors duration-200 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary p-2 hover:bg-surface-container-low rounded-full" onclick="toggleDrawer()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-primary tracking-tight">WebTecMart</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="text-secondary font-medium hover:text-primary transition-colors" href="service.html">Services</a>
+<a class="text-primary font-bold transition-colors" href="portfolio.html">Portfolio</a>
+<a class="text-secondary font-medium hover:text-primary transition-colors" href="about.html">About Us</a>
+<a class="text-secondary font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="text-primary p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Navigation Drawer (Mobile Only) -->
+<div class="fixed inset-0 bg-black/40 z-[60] hidden transition-opacity" id="drawer-overlay" onclick="toggleDrawer()"></div>
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-xl z-[70] translate-x-[-100%] transition-transform duration-300 ease-in-out flex flex-col" id="drawer">
+<div class="p-6 border-b border-outline-variant">
+<span class="font-headline-md text-headline-md text-primary font-bold">WebTecMart Menu</span>
+</div>
+<nav class="flex flex-col gap-unit py-4">
+<a class="mx-2 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">home</span> Home
+            </a>
+<a class="mx-2 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">settings_suggest</span> Services
+            </a>
+<a class="mx-2 px-4 py-3 bg-primary-container text-on-primary-container rounded-full flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">grid_view</span> Portfolio
+            </a>
+<a class="mx-2 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">info</span> About Us
+            </a>
+<a class="mx-2 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">mail</span> Contact
+            </a>
+</nav>
+</aside>
+<main class="pt-24 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="max-w-3xl">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest bg-primary-fixed px-3 py-1 rounded-sm">Work Showcase</span>
+<h1 class="mt-4 font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">Engineering Digital Excellence for the Modern Enterprise.</h1>
+<p class="mt-6 text-body-lg text-secondary max-w-2xl">Explore our curated selection of high-impact technical solutions, ranging from enterprise-grade software to sleek corporate identities.</p>
+</div>
+</section>
+<!-- Category Filter -->
+<div class="flex flex-wrap items-center gap-4 mb-12 overflow-x-auto pb-4 scrollbar-hide">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-medium text-body-sm transition-all whitespace-nowrap shadow-sm">All Projects</button>
+<button class="px-6 py-2 rounded-full bg-white border border-outline-variant text-secondary hover:border-primary hover:text-primary font-medium text-body-sm transition-all whitespace-nowrap">Web Applications</button>
+<button class="px-6 py-2 rounded-full bg-white border border-outline-variant text-secondary hover:border-primary hover:text-primary font-medium text-body-sm transition-all whitespace-nowrap">Corporate Branding</button>
+<button class="px-6 py-2 rounded-full bg-white border border-outline-variant text-secondary hover:border-primary hover:text-primary font-medium text-body-sm transition-all whitespace-nowrap">Cloud Infrastructure</button>
+<button class="px-6 py-2 rounded-full bg-white border border-outline-variant text-secondary hover:border-primary hover:text-primary font-medium text-body-sm transition-all whitespace-nowrap">Mobile Development</button>
+</div>
+<!-- Bento Grid Portfolio -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[280px]">
+<!-- Featured Large Project -->
+<div class="group relative md:col-span-8 md:row-span-2 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A clean, professional wide-angle shot of a high-tech corporate office interior with minimalist desks and large monitors displaying complex data visualization dashboards. The lighting is soft and natural, emphasizing a bright, light-mode aesthetic with primary blue accents. A sleek architectural feel that conveys operational excellence and high-end technology services." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFryLpZvIv0M_n-ZsY8AdRSzYJIjOvFGU2iaaFJTODGtT2GvOElLlwuSgiWfBZLDO_okZsnSuN-9L-ZiT5PxscUqOz1-1ipkowgw0RB_E4TR81Cywe3LjvJDg2fn-LwzKdj9rFJnBnbPTfef95ahhY2jDo_XaGJT1_9UHao5AIEHoM6hAkiLhlP4k3NfjH6Hf2xfBgvwkTTXUuQydtRbIV-qV_SOfVCshkoQ-9RZ0n8QaY6b80Eg5K')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-full p-8">
+<div class="glass-overlay p-6 rounded-lg max-w-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<span class="font-label-md text-label-md text-white/90 uppercase mb-2 block">Enterprise SaaS</span>
+<h3 class="font-headline-lg text-white mb-2">NexGen Operations Platform</h3>
+<p class="text-white/80 text-body-sm">A full-scale cloud infrastructure overhaul for a Fortune 500 logistics provider, optimizing efficiency by 40%.</p>
+<button class="mt-4 flex items-center gap-2 text-white font-semibold text-body-sm hover:underline">
+                            View Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative md:col-span-4 md:row-span-1 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A macro photograph focusing on a sleek smartphone screen displaying a beautifully designed mobile application with a minimalist blue and white interface. The phone is held by a professional in a modern studio setting with soft bokeh in the background. The aesthetic is clean, corporate, and focuses on modern UI/UX excellence." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEPVEkZD0R-_-zRHAzXesxVj0Aj-KE2Orrq6ewkcq5UQ_28r7Yr8BegswoXyQqDLsRc3iRYFVab4H2kQEFQ7QWMMUPc_j7hPI6yA3TCX_f-RKtlXE9vP5OG7hzAg0hSSca9QKzdFZNA5eKbyaA29OkjQxJLBGefbeYtkV3mptmANQDzPQBOEvBqVIjH0LwWXxISKZus1m66cYiTiBudO-xeX_W0jDBztsJokWRNDNWaBA9pIWg3v3w')">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-6">
+<div class="glass-overlay p-4 rounded-lg">
+<span class="font-label-md text-label-md text-white/90 uppercase">Mobile App</span>
+<h3 class="font-headline-md text-white">FinTrack Pro</h3>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative md:col-span-4 md:row-span-1 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist overhead view of high-quality corporate stationery and branding materials like business cards, letterheads, and a tablet. The color palette is strictly professional with deep blues and crisp whites. The scene is lit with clinical, high-key studio lighting for a crisp and results-driven tech provider feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFy7wY76c3dJzAyz639C4r8uFko106r3RMBgt9Vn4wtPqS8SNGChXJVEt3q3svhEYsgx2rk3Hrcvem5Pb2SJV1391o025nWO12vpB9KRmusdjo0_9Lu2d-yFbecGp_3-D7qLy2-tiMAf1AeEKsOfOW1e0T6Nk44hk--mk1tvK_TOx4eq4TSFbAEQPjKyR_hetSYMlmHiREd982DFuFt8Tvsof_HW9k1Zz3dSqEgMUuD9AADWT_Yom7')">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-6">
+<div class="glass-overlay p-4 rounded-lg">
+<span class="font-label-md text-label-md text-white/90 uppercase">Branding</span>
+<h3 class="font-headline-md text-white">Lumina Tech Identity</h3>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group relative md:col-span-4 md:row-span-1 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A high-tech server room visualization with glowing blue LED indicator lights on server racks. The image uses a shallow depth of field to create an artistic, professional look. The color scheme is dominated by the brand's primary blue and deep grays, symbolizing reliability and robust cloud infrastructure services." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAngCkutpVCpb_tUbnluBV76RxAhApfgJYK2_rkzEL3txM1DpN6dqBljhSyHtsZrawiHVmrOqC5nES4T5zVG0EJQfDDVOaeuY_My6Zc4wFX95r-T8Af7aED9u-qCGyJdPJQYHErf1_xS8m-yFYO4ftWu0u7b__vQ97gi34aw_VpnQh0X2MdG-NQoFCBT5D9bd8ANR-MOulg3u3a-uMjlblD_emDtdG8dfj1SWjJoOc8pFSLl4amDc2l')">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-6">
+<div class="glass-overlay p-4 rounded-lg">
+<span class="font-label-md text-label-md text-white/90 uppercase">Infrastructure</span>
+<h3 class="font-headline-md text-white">CoreCloud Sync</h3>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="group relative md:col-span-4 md:row-span-1 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A perspective shot of a modern, minimal website landing page displayed on a premium laptop. The website features bold typography and clean whitespace. The environment is a bright, professional workspace with a soft-focus indoor plant in the background. The lighting is bright and inviting, typical of high-end B2B agency work." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCdExzuF9fqYmgLtq_T5H2YchwW6imm_6gDHrl6KA6euBECeibCF72CIrCY9vR1OhQY7H1GX-OtnbR104G76t1k2zZ6tycC2RRJZQvbSlvF9axWi20eSSwyTupO0Fw27Z-Gg0KYK0nT2N0Ep-fPJurTGAWuPTG7keiiXOvnyY3S_Dn1MAQjKdLkMklGIsZsO94_CnzVzdj_v3ED2N0uEPEgkWoyizvv3dJtFbvg9_vqEVsQUMZX4M6')">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-6">
+<div class="glass-overlay p-4 rounded-lg">
+<span class="font-label-md text-label-md text-white/90 uppercase">Web Dev</span>
+<h3 class="font-headline-md text-white">Global Asset Hub</h3>
+</div>
+</div>
+</div>
+<!-- Project 6 (Tall) -->
+<div class="group relative md:col-span-4 md:row-span-2 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A vertical composition showing a stylized 3D render of an abstract data network. Glowing nodes and lines connect in a geometric pattern against a clean white background with blue accents. The style is modern, technical, and clean, representing complex software engineering and data connectivity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsqzTRO9Gk1tPDuHc-OQ3KMRJaqIVZ0HhFRwFVWdExAIZAR6OqMe_lVzWdQDGIWPUZ2ICPdfR5dIWN_ie53p4NtpHS4XH7ogmKuvEyotYw0LRlLozCifI9eA_047AnRDGRR4FGT_2P43_UIcMmMNh3uPqEqemiaK6OltqZTjAwv7cLJFtEJjkBHDrBxNXO7DbE29cl47BXotVQcG8h2Qw6DZ3Xxciv2DXLGHD-zqUNNgSs1sqXrQ-n')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8">
+<div class="glass-overlay p-6 rounded-lg">
+<span class="font-label-md text-label-md text-white/90 uppercase">Data Science</span>
+<h3 class="font-headline-md text-white">IntelliNet AI Analytics</h3>
+<p class="mt-2 text-white/80 text-body-sm">Custom machine learning algorithms for predictive market analysis.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<section class="mt-24 bg-surface-container rounded-2xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 border border-outline-variant">
+<div class="max-w-xl text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Ready to start your next technical project?</h2>
+<p class="mt-4 text-secondary text-body-md">Let's discuss how WebTecMart can bring your vision to life with our engineering expertise and corporate focus.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg shadow-sm hover:bg-primary-container transition-colors">Start a Project</button>
+<button class="px-8 py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary-fixed transition-colors">Contact Sales</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant w-full">
+<div class="flex flex-col items-center gap-4 py-12 px-margin-mobile text-center max-w-container-max mx-auto">
+<span class="font-headline-md text-headline-md text-primary font-bold">WebTecMart</span>
+<p class="text-secondary font-body-sm max-w-md">Leading technical solutions for forward-thinking enterprises. Reliability and efficiency in every line of code.</p>
+<div class="flex gap-6 mt-4">
+<a class="text-secondary text-body-sm hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-secondary text-body-sm hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-secondary text-body-sm hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">FAQ</a>
+</div>
+<p class="mt-8 text-secondary font-body-sm">© 2024 WebTecMart. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const isHidden = drawer.classList.contains('translate-x-[-100%]');
+            
+            if (isHidden) {
+                drawer.classList.remove('translate-x-[-100%]');
+                overlay.classList.remove('hidden');
+            } else {
+                drawer.classList.add('translate-x-[-100%]');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Close drawer on link click
+        document.querySelectorAll('#drawer nav a').forEach(link => {
+            link.addEventListener('click', toggleDrawer);
+        });
+    </script>
+</body></html>

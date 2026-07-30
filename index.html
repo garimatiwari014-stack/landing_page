@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WebTecMart | Complete Digital Branding Agency</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffd0d8",
+                    "inverse-surface": "#2f3131",
+                    "surface-container": "#eeeeee",
+                    "background": "#f9f9f9",
+                    "on-tertiary-container": "#fffeff",
+                    "on-primary-fixed-variant": "#7a0020",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#340010",
+                    "surface-dark": "#222222",
+                    "on-primary-container": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "success-green": "#5CB85C",
+                    "tertiary-fixed": "#99f894",
+                    "secondary-container": "#e2dfde",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#002204",
+                    "on-surface": "#1a1c1c",
+                    "background-alt": "#F5F5F5",
+                    "surface-container-low": "#f3f3f3",
+                    "tertiary-container": "#298732",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container-high": "#e8e8e8",
+                    "outline": "#717881",
+                    "secondary": "#5f5e5e",
+                    "on-tertiary-fixed-variant": "#005312",
+                    "inverse-primary": "#ff9bb3",
+                    "on-error": "#ffffff",
+                    "tertiary": "#006d1b",
+                    "error-container": "#ffdad6",
+                    "link-blue": "#c92a3e",
+                    "on-secondary-container": "#636262",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#414750",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#474746",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary": "#c92a3e",
+                    "primary-fixed-dim": "#ff9bb3",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-dim": "#dadada",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c1c7d1",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-fixed-dim": "#7edb7b",
+                    "primary-container": "#e63946",
+                    "surface": "#f9f9f9",
+                    "surface-tint": "#d62839"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["JetBrains Mono"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            overflow-x: hidden;
+        }
+        .scrolling-wrapper {
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .bento-item-large {
+            grid-column: span 2;
+        }
+        #mobile-drawer {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        #mobile-drawer.open {
+            transform: translateX(0);
+        }
+        .overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:bg-surface-container-low p-2 rounded-full transition-colors" id="menu-toggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-md text-headline-md-mobile font-bold text-primary">WebTecMart</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</div>
+</div>
+</header>
+<!-- NavigationDrawer Overlay -->
+<div class="overlay fixed inset-0 bg-black/50 z-[60]" id="drawer-overlay"></div>
+<!-- NavigationDrawer -->
+<aside class="fixed top-0 left-0 h-full w-72 z-[70] bg-surface-container-low shadow-xl transform transition-transform duration-300 rounded-r-xl overflow-y-auto" id="mobile-drawer">
+<div class="flex flex-col gap-unit py-4">
+<div class="px-6 py-4 border-b border-outline-variant mb-4">
+<span class="font-headline-md text-headline-md text-primary">WebTecMart Menu</span>
+</div>
+<nav class="flex flex-col">
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-3 flex items-center gap-4" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-body-md">Home</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 hover:bg-secondary-container rounded-full flex items-center gap-4 transition-colors" href="service.html">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="font-body-md">Services</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 hover:bg-secondary-container rounded-full flex items-center gap-4 transition-colors" href="portfolio.html  ">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-body-md">Portfolio</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 hover:bg-secondary-container rounded-full flex items-center gap-4 transition-colors" href="about.html">
+<span class="material-symbols-outlined">info</span>
+<span class="font-body-md">About Us</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 hover:bg-secondary-container rounded-full flex items-center gap-4 transition-colors" href="contact.html">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-body-md">Contact</span>
+</a>
+</nav>
+</div>
+</aside>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-white py-16 px-margin-mobile">
+
+<div class="relative z-10 max-w-container-max mx-auto">
+<div class="mb-6">
+<span class="inline-block px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md mb-4">13+ Years of Excellence</span>
+<h1 class="font-display-lg text-headline-lg-mobile text-primary mb-4">Complete Digital Branding Agency</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-8">Boost your digital marketing business with us! We aim at transforming every idea into a proposition that results in revolutionary growth.</p>
+<div class="flex flex-col gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-bold shadow-md hover:shadow-lg transition-all text-center">
+                            Request a Free Quote
+                        </button>
+<button class="border border-primary text-primary px-8 py-4 rounded-lg font-bold hover:bg-primary-fixed transition-all text-center">
+                            Our Portfolio
+                        </button>
+</div>
+</div>
+<div class="mt-12 rounded-xl overflow-hidden shadow-2xl border border-outline-variant">
+<img class="w-full h-64 object-cover" data-alt="A professional, high-end digital workplace with dual monitors showing analytics dashboards and creative website designs. The room is flooded with natural daylight, featuring minimalist white desks and ergonomic furniture. The aesthetic is clean, corporate, and reflects a modern technology agency's operational excellence with subtle blue lighting accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH1_0_hapvwzEKwNprrZqb0ARDSqaA6c6t44u9MdakSeWVmP4D3TkMFqxj5A6qjZHIgNtJgXn9bX5vidqlDdf9NO23LbdnyMT7OZuqAQCu-4XgnO3Hx7uneGAuqXVwE98pRa5UMx-6_HaEmras6jVSUA31gwVyecvRsL4c1EnFZEMhDxEcDqul6UJtsbNO5TSsjuKeeBITOL8iEeENK1RZjDoU4afd6PE2eGOmT2unvkronvx4w7vn"/>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-16 bg-background-alt px-margin-mobile">
+<div class="max-w-container-max mx-auto">
+<div class="mb-10 text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile text-primary mb-4">Concept is King</h2>
+<div class="w-16 h-1 bg-primary-container mx-auto"></div>
+</div>
+<p class="font-body-md text-on-surface mb-8">
+                    WebTecMart is the No.1 digital service provider from the last 13 years, strengthening over 1000+ online businesses with comprehensive digital marketing solutions. Our qualified team of listeners and experts take note of your unique requirements to build customized, innovative plans.
+                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-6 rounded-lg border border-outline-variant text-center shadow-sm">
+<span class="block text-3xl font-bold text-primary mb-1">13+</span>
+<span class="text-sm font-label-md text-secondary uppercase">Years Exp</span>
+</div>
+<div class="bg-white p-6 rounded-lg border border-outline-variant text-center shadow-sm">
+<span class="block text-3xl font-bold text-primary mb-1">1k+</span>
+<span class="text-sm font-label-md text-secondary uppercase">Clients</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-16 px-margin-mobile bg-white">
+<div class="max-w-container-max mx-auto">
+<div class="mb-10">
+<h2 class="font-headline-lg text-headline-lg-mobile text-primary">Development Services</h2>
+<p class="text-secondary mt-2">Empowering your digital presence</p>
+</div>
+<div class="space-y-6">
+<!-- Website Dev -->
+<div class="group bg-white border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-all border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4">web</span>
+<h3 class="font-headline-md text-headline-md mb-2">Website Design &amp; Dev</h3>
+<p class="text-secondary mb-4">Responsive, easy-to-use websites providing a mix of relevant content and high-end graphics.</p>
+<a class="text-link-blue font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                            Learn more <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<!-- SEO -->
+<div class="group bg-white border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-all border-l-4 border-l-success-green">
+<span class="material-symbols-outlined text-success-green text-4xl mb-4">search</span>
+<h3 class="font-headline-md text-headline-md mb-2">SEO Services</h3>
+<p class="text-secondary mb-4">Local, National, and International SEO strategies helping companies rank on the first page of Google.</p>
+<ul class="space-y-2 mb-4">
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-success-green text-lg">check_circle</span> Local Search Dominance</li>
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-success-green text-lg">check_circle</span> International Expansion</li>
+</ul>
+</div>
+<!-- Social Media -->
+<div class="group bg-white border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-all border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4">share</span>
+<h3 class="font-headline-md text-headline-md mb-2">Social Media Marketing</h3>
+<p class="text-secondary mb-4">Engaging and innovative campaigns that make your audience crave for your content.</p>
+</div>
+<!-- Mobile Apps -->
+<div class="group bg-white border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-all border-l-4 border-l-tertiary-container">
+<span class="material-symbols-outlined text-tertiary-container text-4xl mb-4">smartphone</span>
+<h3 class="font-headline-md text-headline-md mb-2">Mobile App Dev</h3>
+<p class="text-secondary mb-4">Building easy-to-use apps to capture the 2 million+ mobile user market.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Bento Section -->
+<section class="py-16 px-margin-mobile bg-background-alt">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg-mobile text-primary mb-8">Our Portfolio</h2>
+<div class="bento-grid">
+<div class="bento-item-large relative h-48 rounded-xl overflow-hidden shadow-sm group">
+<img class="w-full h-full object-cover" data-alt="A sleek e-commerce website interface displayed on a high-resolution laptop screen. The design features minimalist typography, high-quality product imagery, and a clean user interface. The color scheme is professional, dominated by soft grays and primary blue accents, reflecting a successful digital branding project for a modern retail client." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZoEcup07LeNg5X6KdufVz6IpzXNK7LWTdcPl_9epXTs3COeJejh15-Es44Rq6ogFHSK4Lb3VAGsdDfA9QBuLL32cZfEx6KMz3GbUszi6aIBFBSKkaim6S3ThjIObyPXbC-t1QpJjhDcRxgvOA1H40QiUqAV3-GPGII2wlbLjlUtxWyV5jWK_yJEXTmngcPNeSeYJafF4FWKRIYqUvI7LQMD8m5--UgyhiNAHheedUcN97djTUJeUF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+<span class="text-white font-bold">E-Commerce Solution</span>
+</div>
+</div>
+<div class="h-40 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A mobile application UI design for a financial technology startup, shown on a modern smartphone. The interface uses a clean, data-driven layout with vibrant blue charts and clear typography. The overall look is professional and user-centric, highlighting mobile app development expertise in a tech-forward style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgvej_S2Kbv6HhLgSJGeH_BHJVwnlPSjJIfg1zfOoYe8iXvKo9V3EzQ0qMEEitWUHUcE12fwRNoT1vFXnE45i6e93wRMXU-tDf8qNHmm48jWEQ3tcl1McW3liL8PX7UE23oH13c_fJ-elG4gKpEJ1U-b9RAbbnQkyqtIoLeK9TZZJynBkbiTFIX50rIWbfrWDl4SwtQ7S8SZXeG0TwTiwXpBKWI2-YtTTqjRqoyMjROsdwhJo29PLF"/>
+</div>
+<div class="h-40 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A collection of corporate branding assets including a logo, business cards, and social media banners laid out on a clean white surface. The visual style is unified by a sophisticated primary blue color palette and minimalist design principles, showcasing digital branding mastery for enterprise clients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjFfR7zqb_ItzrVwFsY6cZYeeZgCzaFVVi-vZq7-p_fcRHpAYDLJ-Bw9y-zbWr7GuLKej1k4nH40gs9FZ62fss4jxutCNvQMRxy0H1OzNyIVJe8hSz28k9huKAV0R0Y86tqrEiXllC322Dmw-vq8SKayJHTrgBU-fE4iDaNe2jDfW7yqRSSebKOCmCqefgTvoNLTEKSRkvHABqn3zLt4OxP1Na-Nd7ljFc-ab_iz1TFjc82ynVk1Jp"/>
+</div>
+</div>
+<button class="w-full mt-8 border-2 border-primary text-primary font-bold py-3 rounded-lg hover:bg-primary-fixed transition-all">
+                    View All Case Studies
+                </button>
+</div>
+</section>
+<!-- Contact/Lead Gen -->
+<section class="py-16 px-margin-mobile bg-white">
+<div class="max-w-container-max mx-auto">
+<div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant shadow-sm">
+<h2 class="font-headline-lg text-headline-lg-mobile text-primary mb-2">Let's work together</h2>
+<p class="text-secondary mb-8">Tell us about your needs, we would love to help.</p>
+<form class="space-y-6">
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1 uppercase tracking-wider">Full Name *</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1 uppercase tracking-wider">Email Address *</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="john@example.com" type="email"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1 uppercase tracking-wider">What do you need?</label>
+<select class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+<option>Website Design</option>
+<option>SEO Services</option>
+<option>Digital Marketing</option>
+<option>Mobile App</option>
+</select>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="consent" type="checkbox"/>
+<label class="text-sm text-on-surface-variant" for="consent">Yes, I'm happy for you to use my information for business communication.</label>
+</div>
+<button class="w-full bg-primary text-white font-bold py-4 rounded-lg shadow-md hover:bg-primary/90 transition-all active:scale-[0.98]" type="submit">
+                            Submit Form
+                        </button>
+</form>
+<div class="mt-12 pt-8 border-t border-outline-variant space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-fixed rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<span class="block text-xs font-label-md text-secondary uppercase">Email Us</span>
+<span class="font-bold">info@webtecmart.com</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-fixed rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<span class="block text-xs font-label-md text-secondary uppercase">Call / WhatsApp</span>
+<span class="font-bold">+91-9999674255</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full border-t border-outline-variant">
+<div class="flex flex-col items-center gap-6 py-12 px-margin-mobile text-center max-w-container-max mx-auto">
+<span class="font-headline-md text-headline-md text-primary font-bold">WebTecMart</span>
+<div class="flex gap-6">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-fixed transition-colors" href="#">
+<img alt="Facebook" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDwXPEv-rm8vA-V292O5UJGT5a5lClAS-HrP1xlb6SLwOeQOrNq-5P9diLiUZPKb-b54WKuBE3ecnk29kgjOFUsm20H2JgOt6Az6GKWWaR7ezAhzoIPN8gTtd1L2xvyNesb6ANyiULZSQnOXZkHz95Q7Z5VJVIX_bNEb2MXEvRoJndt8_vZ9cWPbIfPVRPDeFLeRVvQaUY4o4AdGDf3ciWx7FnHBBEBVRL3q7Ts-GOy90yp2qNTYEK"/>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-fixed transition-colors" href="#">
+<img alt="Twitter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr_MUOKMQS7Z98B6YLOskNghCr0ySp3sdr7kDS4vMOapfeRd6yQTYfcLWK7YQOM0rlCvpTZxmZ7D_3etqCIf_l9FF3KogrKqx4VNcjKfOXUvqZpAPJzELVgnvxBDk5BNd5EG5TAeYeLeGRCATwkEL1cxiAc8gyZqG2k1HX_U3HEboo19H5OXyPkJ8wefvL_rk1DNNZNTYUEe6r2qkg3ULNFNa3ugatYiSOVDivdZWUx6oCPEK7_jAu"/>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-fixed transition-colors" href="#">
+<img alt="LinkedIn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqFtPBdPDaonOrgmrl91BEEBZsa89oFjvy0UrXZKYzkPw4YhhxLiQSrX_FFMFYj9UZ0ekMWpJJSqpb1WDXMENjOG1Wi0WPetZlxKf7TSQxqqKqfJAC9xUJuH3ijU57Z5IR3WKBDNhADCNHd_RKzvUBC8AVUKmDVViNgpKpVSkLY2OZJ0q6CCJ_RTNDvhhH0H1I7Qa2kKo8zv6246jp1EXzxskOWjxs_A1WcGz3Ik51etdbB-qpF_B4"/>
+</a>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-8 gap-y-2">
+<a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-opacity" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-opacity" href="#">FAQ</a>
+<a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-opacity" href="#">Blog</a>
+</nav>
+<div class="pt-6 border-t border-outline-variant/30 w-full">
+<p class="font-body-sm text-body-sm text-secondary">© 2024 WebTecMart. All rights reserved.</p>
+<p class="text-[10px] text-outline mt-2">Website Design Company &amp; SEO Company by Webtecmart</p>
+</div>
+</div>
+</footer>
+<script>
+        const menuBtn = document.getElementById('menu-toggle');
+        const drawer = document.getElementById('mobile-drawer');
+        const overlay = document.getElementById('drawer-overlay');
+
+        function toggleMenu() {
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('active');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Smooth scroll for nav links (mockup)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleMenu();
+            });
+        });
+    </script>
+</body></html>
